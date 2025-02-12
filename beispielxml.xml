@@ -1,0 +1,666 @@
+<quiz>
+<!-- question: 0  -->
+<question type="category">
+<category>
+<text>$course$/top/Standard für FA12_1_Projekt_2022_2023</text>
+</category>
+<info format="moodle_auto_format">
+<text>
+Standardkategorie für Fragen, die im Kontext 'FA12_1_Projekt_2022_2023' freigegeben sind.
+</text>
+</info>
+<idnumber/>
+</question>
+<!-- question: 25961  -->
+<question type="matching">
+<name>
+<text>Zuordnung Arbeiten mit Frameworks und ohne</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Ordnen Sie folgende Begriffe zu!</p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<shuffleanswers>true</shuffleanswers>
+<correctfeedback format="html">
+<text>Die Antwort ist richtig.</text>
+</correctfeedback>
+<partiallycorrectfeedback format="html">
+<text>Die Antwort ist teilweise richtig.</text>
+</partiallycorrectfeedback>
+<incorrectfeedback format="html">
+<text>Die Antwort ist falsch.</text>
+</incorrectfeedback>
+<shownumcorrect/>
+<subquestion format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Spezifische Anforderungen<br></p>
+</text>
+<answer>
+<text>ohne Framework</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Leichtgewichtige Lösungen<br></p>
+</text>
+<answer>
+<text>ohne Framework</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Bessere Kontrolle<br></p>
+</text>
+<answer>
+<text>ohne Framework</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Konsistenz<br></p>
+</text>
+<answer>
+<text>mit Framework</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Klar definierte Schnittstellen<br></p>
+</text>
+<answer>
+<text>mit Framework</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Zeit- und Ressourceneinsparungen<br></p>
+</text>
+<answer>
+<text>mit Framework</text>
+</answer>
+</subquestion>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25949  -->
+<question type="matching">
+<name>
+<text>Zuordnung Verschlüselungsverfahren</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Ordnen Sie den angegebenen Verschlüssselungsalgorithmen das entsprechende Verschlüsselungsverfahren zu!<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<shuffleanswers>true</shuffleanswers>
+<correctfeedback format="html">
+<text>Die Antwort ist richtig.</text>
+</correctfeedback>
+<partiallycorrectfeedback format="html">
+<text>Die Antwort ist teilweise richtig.</text>
+</partiallycorrectfeedback>
+<incorrectfeedback format="html">
+<text>Die Antwort ist falsch.</text>
+</incorrectfeedback>
+<shownumcorrect/>
+<subquestion format="html">
+<text><p dir="ltr" style="text-align: left;">DES<br></p></text>
+<answer>
+<text>Symmetrische Verschlüsselung</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Caesar-Chiffre<br></p>
+</text>
+<answer>
+<text>Symmetrische Verschlüsselung</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text><p dir="ltr" style="text-align: left;">RSA<br></p></text>
+<answer>
+<text>Asymmetrische Verschlüsselung</text>
+</answer>
+</subquestion>
+<subquestion format="html">
+<text><p dir="ltr" style="text-align: left;">DSA<br></p></text>
+<answer>
+<text>Asymmetrische Verschlüsselung</text>
+</answer>
+</subquestion>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25962  -->
+<question type="multichoice">
+<name>
+<text>Aussagen zu PHP</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Welche Aussagen über PHP sind richtig?</p><p dir="ltr" style="text-align: left;">PHP ist ...<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>2.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<single>true</single>
+<shuffleanswers>true</shuffleanswers>
+<answernumbering>abc</answernumbering>
+<showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html">
+<text>Die Antwort ist richtig.</text>
+</correctfeedback>
+<partiallycorrectfeedback format="html">
+<text>Die Antwort ist teilweise richtig.</text>
+</partiallycorrectfeedback>
+<incorrectfeedback format="html">
+<text>Die Antwort ist falsch.</text>
+</incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">plattformabhängig.<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">eine clientseitige Scriptsprache.<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">optimiert zum Entwurf des Frontends.<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">eine von Javascript abgeleitete Sprache.<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="100" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Keine Antwort ist richtig<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25946  -->
+<question type="multichoice">
+<name>
+<text>Framework ja/nein</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Welche der folgenden Argumente sprechen FÜR die Verwendung eines Frameworks?<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<single>false</single>
+<shuffleanswers>true</shuffleanswers>
+<answernumbering>abc</answernumbering>
+<showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html">
+<text>Die Antwort ist richtig.</text>
+</correctfeedback>
+<partiallycorrectfeedback format="html">
+<text>Die Antwort ist teilweise richtig.</text>
+</partiallycorrectfeedback>
+<incorrectfeedback format="html">
+<text>Die Antwort ist falsch.</text>
+</incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="33.33333" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Wiederverwendbarkeit<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="33.33333" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Zeiteinsparung bei häufiger Verwendung<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="33.33333" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Communitiy Beitrag<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-20" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Spezifische Anforderungen im Projekt<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-20" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">leichtgewichtige Lösung<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-20" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Bessere Kontrolle über Programme<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-20" format="html">
+<text>Grundlagen lernen <br></text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25948  -->
+<question type="multichoice">
+<name>
+<text>JSON</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Welche Aussage zum JSON Format ist <strong>nicht </strong>zutreffend?</p><p dir="ltr" style="text-align: left;">JSON ...<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<single>true</single>
+<shuffleanswers>true</shuffleanswers>
+<answernumbering>abc</answernumbering>
+<showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html">
+<text>Die Antwort ist richtig.</text>
+</correctfeedback>
+<partiallycorrectfeedback format="html">
+<text>Die Antwort ist teilweise richtig.</text>
+</partiallycorrectfeedback>
+<incorrectfeedback format="html">
+<text>Die Antwort ist falsch.</text>
+</incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="-10" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... steht für JavaScript Object Notation<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-10" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... ist lesbar für Menschen<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-10" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... könnte folgende Zeile beinhalten:</p> <p lang="en-US"> "id": "file",</p><p><br> </p><br><p></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-10" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... kann auch Zeilen mit eckigen Klammern beinhalten so wie die folgende:</p><p dir="ltr" style="text-align: left;"></p><p lang="en-US"> "menuitem": [</p><br><p></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="100" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">beinhaltet KEINE Key- Value Paare<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>krma</text>
+</tag>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25966  -->
+<question type="multichoice">
+<name>
+<text>Linux</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Welche Linux-Distribution ist auf Sicherheits- und Penetrationstests von IT-Systemen spezialisiert?<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>2.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<single>true</single>
+<shuffleanswers>true</shuffleanswers>
+<answernumbering>abc</answernumbering>
+<showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html">
+<text>Die Antwort ist richtig.</text>
+</correctfeedback>
+<partiallycorrectfeedback format="html">
+<text>Die Antwort ist teilweise richtig.</text>
+</partiallycorrectfeedback>
+<incorrectfeedback format="html">
+<text>Die Antwort ist falsch.</text>
+</incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Feodora<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">SecUriTas<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Mali<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Grinch<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="100" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Keine Antwort ist richtig<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25950  -->
+<question type="multichoice">
+<name>
+<text>XML</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Welche der folgenden Aussagen ist falsch, bzw. trifft NICHT auf XML zu?</p><p dir="ltr" style="text-align: left;">XML...<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<single>true</single>
+<shuffleanswers>true</shuffleanswers>
+<answernumbering>abc</answernumbering>
+<showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html">
+<text>Die Antwort ist richtig.</text>
+</correctfeedback>
+<partiallycorrectfeedback format="html">
+<text>Die Antwort ist teilweise richtig.</text>
+</partiallycorrectfeedback>
+<incorrectfeedback format="html">
+<text>Die Antwort ist falsch.</text>
+</incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="-20" format="html">
+<text>... ist eine Auszeichnungssprache.<br></text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-20" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... könnte folgende Zeile beinhalten:</p><p dir="ltr" style="text-align: left;"></p><p lang="en-US"> &lt;menu id="file" value="File"&gt;</p><br><p></p>
+</text>
+<feedback format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... strukturiert Daten hierarchisch<br></p>
+</text>
+</feedback>
+</answer>
+<answer fraction="-20" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... ist von Menschen lesbar<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="-20" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... kann die Anforderung "gültig" und/oder "wohlgeformt" erfüllen.<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="100" format="html">
+<text>
+<p dir="ltr" style="text-align: left;">... ist ein proprietäres Format.<br></p>
+</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>krma</text>
+</tag>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25965  -->
+<question type="truefalse">
+<name>
+<text>3-2-1 Regel</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Die 3-2-1 -Regel gibt Rückschlüsse in Bezug auf die Sicherheit eines Passwortes.<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>1.0000000</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<answer fraction="0" format="moodle_auto_format">
+<text>true</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="100" format="moodle_auto_format">
+<text>false</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25963  -->
+<question type="truefalse">
+<name>
+<text>Einbettung von PHP in ein HTML-Script</text>
+</name>
+<questiontext format="html">
+<text>
+<p>Man erkennt den Beginn von PHP-Quelltext innerhalb von HTML an folgendem TAG:</p><p>&lt;?php <br></p><p><br></p><p>&gt;<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>1.0000000</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<answer fraction="100" format="moodle_auto_format">
+<text>true</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="0" format="moodle_auto_format">
+<text>false</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+<!-- question: 25964  -->
+<question type="truefalse">
+<name>
+<text>Symmetrische Verschlüsselung</text>
+</name>
+<questiontext format="html">
+<text>
+<p dir="ltr" style="text-align: left;">Bei der Symmetrischen Verschlüsselung wird der Schlüssel vom Sender generiert</p><p dir="ltr" style="text-align: left;">und vor der Übertragung per HTTP an den Empfänger versendet.<br></p>
+</text>
+</questiontext>
+<generalfeedback format="html">
+<text/>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>1.0000000</penalty>
+<hidden>0</hidden>
+<idnumber/>
+<answer fraction="0" format="moodle_auto_format">
+<text>true</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<answer fraction="100" format="moodle_auto_format">
+<text>false</text>
+<feedback format="html">
+<text/>
+</feedback>
+</answer>
+<tags>
+<tag>
+<text>gln</text>
+</tag>
+</tags>
+</question>
+</quiz>
