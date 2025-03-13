@@ -35,13 +35,13 @@ export class FileSubmitterComponent {
       .post<{ questions: any[] }>('http://localhost:8080/upload/', formData)
       .subscribe({
         next: (response) => {
-          console.log('Upload erfolgreich', response);
+          console.log('Upload successfull', response);
           this.parsedQuestions = response.questions;
           if (!this.parsedQuestions.length) {
-            console.warn('No questions parsed. Check backend.');
+            console.warn('No questions parsed, check backend.');
           }
         },
-        error: (error) => console.error('Fehler beim Upload', error),
+        error: (error) => console.error('Error during upload', error),
       });
   }
 }
