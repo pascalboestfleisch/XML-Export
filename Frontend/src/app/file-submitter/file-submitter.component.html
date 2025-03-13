@@ -1,0 +1,30 @@
+<input
+  type="file"
+  class="file-upload"
+  multiple
+  (change)="onFileSelected($event)"
+  #fileInput
+/>
+<button (click)="uploadFiles()">Submit</button>
+
+<h3>Parsed Questions:</h3>
+<ul *ngIf="parsedQuestions.length > 0">
+  <li *ngFor="let question of parsedQuestions">
+    <strong>{{ question.name }}</strong> ({{ question.type }})
+    <p>{{ question.text }}</p>
+    <div *ngIf="question.subquestions?.length">
+      <h4>Subquestions:</h4>
+      <ul>
+        <li *ngFor="let subquestion of question.subquestions">
+          <strong>{{ subquestion.subquestion_text }}</strong> →
+          {{ subquestion.answer_text }}
+        </li>
+      </ul>
+    </div>
+    <ul>
+      <li *ngFor="let answer of question.answers">
+        {{ answer.text }} → {{ answer.correct ? "✅" : "❌" }}
+      </li>
+    </ul>
+  </li>
+</ul>
