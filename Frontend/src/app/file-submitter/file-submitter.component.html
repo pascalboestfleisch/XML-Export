@@ -8,10 +8,12 @@
 <button (click)="uploadFiles()">Submit</button>
 
 <h3>Parsed Questions:</h3>
-<ul *ngIf="parsedQuestions.length > 0">
+<ol *ngIf="parsedQuestions.length > 0">
   <li *ngFor="let question of parsedQuestions">
     <strong>{{ question.name }}</strong> ({{ question.type }})
     <p>{{ question.text }}</p>
+
+    <!-- Falls es Subfragen gibt -->
     <div *ngIf="question.subquestions?.length">
       <h4>Subquestions:</h4>
       <ul>
@@ -21,10 +23,16 @@
         </li>
       </ul>
     </div>
+
+    <!-- Antwortmöglichkeiten -->
+    <h4>Answers:</h4>
     <ul>
       <li *ngFor="let answer of question.answers">
-        {{ answer.text }} → {{ answer.correct ? "TRUE" : "FALSE" }}
+        {{ answer.text }} → 
+        <span [ngClass]="{ 'text-success': answer.correct, 'text-danger': !answer.correct }">
+          {{ answer.correct ? "TRUE" : "FALSE" }}
+        </span>
       </li>
     </ul>
   </li>
-</ul>
+</ol>
