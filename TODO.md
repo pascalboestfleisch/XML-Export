@@ -22,7 +22,6 @@ Project Description
 
 ### In Progress
 
-- [ ] UML Klassendiagramm erstellen  
 
 ### Testing
 
