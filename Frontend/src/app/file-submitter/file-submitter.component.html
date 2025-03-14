@@ -13,7 +13,6 @@
     <strong>{{ question.name }}</strong> ({{ question.type }})
     <p>{{ question.text }}</p>
 
-    <!-- Falls es Subfragen gibt -->
     <div *ngIf="question.subquestions?.length">
       <h4>Subquestions:</h4>
       <ul>
@@ -24,8 +23,6 @@
       </ul>
     </div>
 
-    <!-- Antwortmöglichkeiten -->
-    <h4>Answers:</h4>
     <ul>
       <li *ngFor="let answer of question.answers">
         {{ answer.text }} → 
