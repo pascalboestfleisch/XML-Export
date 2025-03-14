@@ -35,19 +35,19 @@ def parse_moodle_xml(file):
 
     for question in root.findall("question"):
         question_type = question.get("type", "unknown")
-        question_name = question.find("./name/text")
-        question_text = question.find("./questiontext/text")
+        question_name_element = question.find("./name/text")
+
+        if question_name_element is None or not question_name_element.text.strip():
+            continue
+
+        question_text_element = question.find("./questiontext/text")
 
         parsed_question = {
             "type": question_type,
-            "name": (
-                question_name.text.strip()
-                if question_name is not None
-                else "Unnamed Question"
-            ),
+            "name": question_name_element.text.strip(),
             "text": (
-                filter_html_tags(question_text.text.strip())
-                if question_text is not None
+                filter_html_tags(question_text_element.text.strip())
+                if question_text_element is not None
                 else ""
             ),
             "subquestions": [],
@@ -86,7 +86,9 @@ def parse_moodle_xml(file):
                         "correct": is_correct,
                     }
                 )
+
         questions.append(parsed_question)
+
     return questions
 
 
