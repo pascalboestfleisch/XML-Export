@@ -7,12 +7,6 @@ Project Description
 
 ### Todo
 
-- *Meilenstein 2*  
-- [ ] UML Aktivitätsdiagramm erstellen  
-- [ ] UML Klassendiagramm erstellen  
-- [ ] Erste Darstellung der XML-Dateien im Frontend  
-- [ ] XML-Datenstruktur in einer geeigneten Datenstruktur speichern  
-- [ ] Funktion zum Laden einzelner XML-Dateien  
 - *Meilenstein 3*  
 - [ ] Funktion Laden mehrerer XML-Dateien  
 - [ ] UML Sequenzdiagramm  
@@ -34,6 +28,10 @@ Project Description
 
 ### Done ✓
 
+- [x] Funktion zum Laden einzelner XML-Dateien  
+- [x] XML-Datenstruktur in einer geeigneten Datenstruktur speichern  
+- [x] Erste Darstellung der XML-Dateien im Frontend  
+- [x] UML Aktivitätsdiagramm erstellen  
 - [x] UML Use Case Diagramm  
 - [x] Entscheidung Architektur und Libraries  
 - [x] Struktur XML-Datei Analyse  
