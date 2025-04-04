@@ -59,13 +59,10 @@ export class FileSubmitterComponent {
   // Export-Function for selected questions
   exportSelectedQuestions() {
     const selectedQuestions = this.parsedQuestions.filter((q) => {
-      // Include the main question if it's selected
+
       const isMainQuestionSelected = q.selected;
-      
-      // Include the subquestions if any subquestion is selected
       const areSubquestionsSelected = q.subquestions?.some((sub: { selected: any }) => sub.selected);
       
-      // Return true if the main question or any subquestion is selected, and ensure that questions with subquestions are included
       return (isMainQuestionSelected || areSubquestionsSelected);
     });
   

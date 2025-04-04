@@ -141,7 +141,7 @@ async def export_questions(data: dict):
         text_el = ET.SubElement(question_el, "questiontext")
         ET.SubElement(text_el, "text").text = q["text"]
 
-        # Matching question: write subquestions
+        # matching type for question
         if q["type"] == "matching":
             for subq in q.get("subquestions", []):
                 sub_el = ET.SubElement(question_el, "subquestion")
@@ -150,7 +150,7 @@ async def export_questions(data: dict):
                 sub_ans = ET.SubElement(sub_el, "answer")
                 ET.SubElement(sub_ans, "text").text = subq["answer_text"]
 
-        # Normal answers (e.g. multichoice, truefalse)
+        # normal answers (e.g. multichoice, truefalse)
         for answer in q.get("answers", []):
             answer_el = ET.SubElement(
                 question_el, "answer", fraction="100" if answer["correct"] else "0"
@@ -158,11 +158,11 @@ async def export_questions(data: dict):
             ET.SubElement(answer_el, "text").text = answer["text"]
 
     xml_data = ET.tostring(root, encoding="utf-8", method="xml")
-    # parseString erzeugt automatisch eine XML-Deklaration – wir entfernen sie manuell:
+
     pretty_xml = minidom.parseString(xml_data).toprettyxml(indent="  ")
     lines = pretty_xml.splitlines()
-    filtered_lines = [line for line in lines if not line.strip().startswith('<?xml')]
-    xml_str = '<?xml version="1.0" encoding="UTF-8"?>\n' + '\n'.join(filtered_lines)
+    filtered_lines = [line for line in lines if not line.strip().startswith("<?xml")]
+    xml_str = '<?xml version="1.0" encoding="UTF-8"?>\n' + "\n".join(filtered_lines)
 
     return Response(
         content=xml_str,
