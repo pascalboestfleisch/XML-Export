@@ -3,7 +3,8 @@ import io
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, Response, UploadFile, File, HTTPException
+from xml.dom import minidom
 
 app = FastAPI()
 
@@ -17,7 +18,7 @@ app.add_middleware(
 )
 
 
-def parse_moodle_xml(file):
+def parse_moodle_xml(file, seen_questions):
     try:
         file_content = file.read().decode("utf-8")
         tree = ET.parse(io.StringIO(file_content))
@@ -40,11 +41,18 @@ def parse_moodle_xml(file):
         if question_name_element is None or not question_name_element.text.strip():
             continue
 
+        question_name = question_name_element.text.strip()
+
+        if (question_name, question_type) in seen_questions:
+            continue  # skip already existing questions
+
+        seen_questions.add((question_name, question_type))
+
         question_text_element = question.find("./questiontext/text")
 
         parsed_question = {
             "type": question_type,
-            "name": question_name_element.text.strip(),
+            "name": question_name,
             "text": (
                 filter_html_tags(question_text_element.text.strip())
                 if question_text_element is not None
@@ -54,6 +62,7 @@ def parse_moodle_xml(file):
             "answers": [],
         }
 
+        # Ensure subquestions include 'selected' for checkboxes in frontend
         if question_type == "matching":
             for subquestion in question.findall("./subquestion"):
                 subquestion_text = subquestion.find("text")
@@ -73,6 +82,7 @@ def parse_moodle_xml(file):
                     {
                         "subquestion_text": subquestion_content,
                         "answer_text": answer_content,
+                        "selected": False,
                     }
                 )
 
@@ -100,13 +110,65 @@ def filter_html_tags(answers):
 
 @app.post("/upload/")
 async def upload_files(files: List[UploadFile] = File(...)):
+    if not files:
+        raise HTTPException(status_code=400, detail="No files uploaded.")
+
     all_questions = []
+    seen_questions = set()  # Set for duplicate questions
 
     for file in files:
         print(f"Received file: {file.filename}")
-        questions = parse_moodle_xml(file.file)
+        questions = parse_moodle_xml(file.file, seen_questions)
         all_questions.extend(questions)
+
     return {"questions": all_questions}
+
+
+@app.post("/export/")
+async def export_questions(data: dict):
+    questions = data.get("questions", [])
+
+    if not questions:
+        raise HTTPException(status_code=400, detail="No questions selected for export.")
+
+    root = ET.Element("quiz")
+
+    for q in questions:
+        question_el = ET.SubElement(root, "question", type=q["type"])
+        name_el = ET.SubElement(question_el, "name")
+        ET.SubElement(name_el, "text").text = q["name"]
+
+        text_el = ET.SubElement(question_el, "questiontext")
+        ET.SubElement(text_el, "text").text = q["text"]
+
+        # Matching question: write subquestions
+        if q["type"] == "matching":
+            for subq in q.get("subquestions", []):
+                sub_el = ET.SubElement(question_el, "subquestion")
+                sub_q_text = ET.SubElement(sub_el, "text")
+                sub_q_text.text = subq["subquestion_text"]
+                sub_ans = ET.SubElement(sub_el, "answer")
+                ET.SubElement(sub_ans, "text").text = subq["answer_text"]
+
+        # Normal answers (e.g. multichoice, truefalse)
+        for answer in q.get("answers", []):
+            answer_el = ET.SubElement(
+                question_el, "answer", fraction="100" if answer["correct"] else "0"
+            )
+            ET.SubElement(answer_el, "text").text = answer["text"]
+
+    xml_data = ET.tostring(root, encoding="utf-8", method="xml")
+    # parseString erzeugt automatisch eine XML-Deklaration – wir entfernen sie manuell:
+    pretty_xml = minidom.parseString(xml_data).toprettyxml(indent="  ")
+    lines = pretty_xml.splitlines()
+    filtered_lines = [line for line in lines if not line.strip().startswith('<?xml')]
+    xml_str = '<?xml version="1.0" encoding="UTF-8"?>\n' + '\n'.join(filtered_lines)
+
+    return Response(
+        content=xml_str,
+        media_type="application/xml",
+        headers={"Content-Disposition": "attachment; filename=exported_questions.xml"},
+    )
 
 
 if __name__ == "__main__":
