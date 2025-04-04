@@ -2,10 +2,21 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-file-submitter',
-  imports: [HttpClientModule, CommonModule],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    MatExpansionModule,
+    FormsModule,
+    MatListModule,
+    MatCheckboxModule,
+  ],
   templateUrl: './file-submitter.component.html',
   styleUrls: ['./file-submitter.component.css'],
 })
@@ -42,6 +53,41 @@ export class FileSubmitterComponent {
           }
         },
         error: (error) => console.error('Error during upload', error),
+      });
+  }
+
+  // Export-Function for selected questions
+  exportSelectedQuestions() {
+    const selectedQuestions = this.parsedQuestions.filter((q) => {
+      // Include the main question if it's selected
+      const isMainQuestionSelected = q.selected;
+      
+      // Include the subquestions if any subquestion is selected
+      const areSubquestionsSelected = q.subquestions?.some((sub: { selected: any }) => sub.selected);
+      
+      // Return true if the main question or any subquestion is selected, and ensure that questions with subquestions are included
+      return (isMainQuestionSelected || areSubquestionsSelected);
+    });
+  
+    if (selectedQuestions.length === 0) {
+      console.warn('No questions selected for export.');
+      return;
+    }
+  
+    this.http
+      .post(
+        'http://localhost:8080/export/',
+        { questions: selectedQuestions },
+        { responseType: 'blob' }
+      )
+      .subscribe((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'exported_questions.xml';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
       });
   }
 }

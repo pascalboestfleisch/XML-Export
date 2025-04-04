@@ -3,28 +3,48 @@
   class="file-upload"
   multiple
   (change)="onFileSelected($event)"
-  #fileInput
 />
 <button (click)="uploadFiles()">Submit</button>
 
-<h3>Parsed Questions:</h3>
-<ul *ngIf="parsedQuestions.length > 0">
-  <li *ngFor="let question of parsedQuestions">
-    <strong>{{ question.name }}</strong> ({{ question.type }})
-    <p>{{ question.text }}</p>
-    <div *ngIf="question.subquestions?.length">
+<!-- Export Button -->
+<button (click)="exportSelectedQuestions()">Export Selected Questions</button>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let question of parsedQuestions">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <!-- Checkbox in der Header-Leiste -->
+        <mat-checkbox [(ngModel)]="question.selected" (click)="$event.stopPropagation()">
+        </mat-checkbox>
+        {{ question.name }} ({{ question.type }})
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    
+    <!-- Question Text -->
+    <p><strong>Question:</strong> {{ question.text }}</p>
+
+    <!-- Display Subquestions (ohne Checkbox) -->
+    <div *ngIf="question.type === 'matching' && question.subquestions?.length">
       <h4>Subquestions:</h4>
       <ul>
-        <li *ngFor="let subquestion of question.subquestions">
-          <strong>{{ subquestion.subquestion_text }}</strong> →
-          {{ subquestion.answer_text }}
+        <li *ngFor="let sub of question.subquestions">
+          <span>{{ sub.subquestion_text }}</span>
+          <span *ngIf="sub.answer_text && sub.answer_text.trim() !== ''">
+            → {{ sub.answer_text }}
+          </span>
         </li>
       </ul>
     </div>
+
+    <!-- Display Answers -->
+    <h4>Answers:</h4>
     <ul>
       <li *ngFor="let answer of question.answers">
-        {{ answer.text }} → {{ answer.correct ? "TRUE" : "FALSE" }}
+        {{ answer.text }} →
+        <span [ngClass]="{ 'answer-correct': answer.correct, 'answer-wrong': !answer.correct }">
+          {{ answer.correct ? "TRUE" : "FALSE" }}
+        </span>
       </li>
     </ul>
-  </li>
-</ul>
+  </mat-expansion-panel>
+</mat-accordion>
