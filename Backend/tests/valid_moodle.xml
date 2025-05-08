@@ -1,0 +1,69 @@
+<quiz>
+<!-- question: 25961  -->
+  <question type="matching">
+    <name>
+      <text>Zuordnung Arbeiten mit Frameworks und ohne</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Ordnen Sie folgende Begriffe zu!</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Die Antwort ist richtig.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Die Antwort ist teilweise richtig.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Die Antwort ist falsch.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <subquestion format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Spezifische Anforderungen<br></p>]]></text>
+      <answer>
+        <text>ohne Framework</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Leichtgewichtige Lösungen<br></p>]]></text>
+      <answer>
+        <text>ohne Framework</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Bessere Kontrolle<br></p>]]></text>
+      <answer>
+        <text>ohne Framework</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Konsistenz<br></p>]]></text>
+      <answer>
+        <text>mit Framework</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Klar definierte Schnittstellen<br></p>]]></text>
+      <answer>
+        <text>mit Framework</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Zeit- und Ressourceneinsparungen<br></p>]]></text>
+      <answer>
+        <text>mit Framework</text>
+      </answer>
+    </subquestion>
+    <tags>
+      <tag><text>gln</text>
+</tag>
+    </tags>
+  </question>
+</quiz>
