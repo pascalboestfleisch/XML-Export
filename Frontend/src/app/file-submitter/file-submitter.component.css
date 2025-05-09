@@ -7,3 +7,27 @@
     color: red;
     font-weight: bold;
   }
+
+  mat-accordion {
+    margin-top: 1rem;
+  }
+  
+  mat-expansion-panel {
+    background: #1e1e1e;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  
+  mat-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  img {
+    border-radius: 4px;
+    margin: 0.5rem 0;
+  }
+  
