@@ -22,7 +22,7 @@
 | Exportoptionen in Frontend                        |  1.5h  |
 | Exportfunktion Backend (Format)                   |  1.5h  |
 | Unit-Tests                                        |  1.5h  |
-| Integrationstest                                  |  1.5h  |
+| Funktionstests                                    |  1.5h  |
 | ------------------------------------------------- |--------|
 | **Gesamtzeit**                                    | 28.0h  |
 
@@ -68,7 +68,7 @@
     - Exportoptionen in Frontend                1.5h
     - Exportfunktion Backend (Format)           1.5h
     - Unit-Tests                                1.5h
-    - Integrationstest                          1.5h
+    - Funktionstest                             1.5h
                                                 ----    
                                     Summe:      6.0h
                                     ----------------
