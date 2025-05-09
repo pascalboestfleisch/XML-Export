@@ -23,9 +23,8 @@
 | Exportfunktion Backend (Format)                   |  1.5h  |
 | Unit-Tests                                        |  1.5h  |
 | Integrationstest                                  |  1.5h  |
-| Vorbereiten Präsentation                          |  2.0h  |
 | ------------------------------------------------- |--------|
-| **Gesamtzeit**                                    | 30.0h  |
+| **Gesamtzeit**                                    | 28.0h  |
 
 ---
 
@@ -70,9 +69,8 @@
     - Exportfunktion Backend (Format)           1.5h
     - Unit-Tests                                1.5h
     - Integrationstest                          1.5h
-    - Vorbereiten Präsentation                  2.0h
                                                 ----    
-                                    Summe:      8.0h
+                                    Summe:      6.0h
                                     ----------------
                                     insgesamt: 30.0h
 ---
