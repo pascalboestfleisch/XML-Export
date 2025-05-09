@@ -7,12 +7,6 @@ Project Description
 
 ### Todo
 
-- *Meilenstein 4*  
-- [ ] Exportoptionen in UI integrieren  
-- [ ] Präsentation vorbereiten  
-- [ ] Integrationstests  
-- [ ] Unit-Tests  
-- [ ] Funktionen Export der XML-Daten in ein gewünschtes Format  
 
 ### In Progress
 
@@ -22,6 +16,9 @@ Project Description
 
 ### Done ✓
 
+- [x] Funktion Export der XML-Daten  
+- [x] Unit-Tests  
+- [x] Exportoptionen in UI integrieren  
 - [x] UML Sequenzdiagramm  
 - [x] Navigation Gesamtübersicht und Detailansicht erstellen  
 - [x] Funktion zur Auswahl eines Elements aus der geladenen XML im Frontend  
