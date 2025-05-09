@@ -23,6 +23,14 @@
     <!-- Question Text -->
     <p><strong>Question:</strong> {{ question.text }}</p>
 
+    <!-- Display Images-->
+    <div *ngIf="question.images?.length">
+      <h4>Images:</h4>
+      <div *ngFor="let image of question.images">
+        <img [src]="image" style="max-width: 50%; height: auto;" />
+      </div>
+    </div>
+
     <!-- Display Subquestions (ohne Checkbox) -->
     <div *ngIf="question.type === 'matching' && question.subquestions?.length">
       <h4>Subquestions:</h4>
@@ -37,14 +45,16 @@
     </div>
 
     <!-- Display Answers -->
-    <h4>Answers:</h4>
-    <ul>
-      <li *ngFor="let answer of question.answers">
-        {{ answer.text }} →
-        <span [ngClass]="{ 'answer-correct': answer.correct, 'answer-wrong': !answer.correct }">
-          {{ answer.correct ? "TRUE" : "FALSE" }}
-        </span>
-      </li>
-    </ul>
+    <div *ngIf="question.answers && question.answers.length > 0">
+      <h4>Answers:</h4>
+      <ul>
+        <li *ngFor="let answer of question.answers">
+          {{ answer.text }} →
+          <span [ngClass]="{ 'answer-correct': answer.correct, 'answer-wrong': !answer.correct }">
+            {{ answer.correct ? "TRUE" : "FALSE" }}
+          </span>
+        </li>
+      </ul>
+  </div>
   </mat-expansion-panel>
 </mat-accordion>

@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Response, UploadFile, File, HTTPException
 from xml.dom import minidom
+import base64
 
 app = FastAPI()
 
@@ -60,9 +61,17 @@ def parse_moodle_xml(file, seen_questions):
             ),
             "subquestions": [],
             "answers": [],
+            "images": [],
         }
 
-        # Ensure subquestions include 'selected' for checkboxes in frontend
+        for file_tag in question.findall(".//file"):
+            encoding = file_tag.get("encoding")
+            if encoding == "base64":
+                image_data = base64.b64decode(file_tag.text.strip())
+                image_base64 = base64.b64encode(image_data).decode("utf-8")
+                parsed_question["images"].append(f"data:image/png;base64, {image_base64}")
+                
+        # questions need to be selected
         if question_type == "matching":
             for subquestion in question.findall("./subquestion"):
                 subquestion_text = subquestion.find("text")
@@ -70,7 +79,7 @@ def parse_moodle_xml(file, seen_questions):
 
                 subquestion_content = (
                     filter_html_tags(subquestion_text.text.strip())
-                    if subquestion_text is not None
+                    if subquestion_text is not None and subquestion_text.text is not None
                     else ""
                 )
                 answer_content = (
@@ -138,8 +147,24 @@ async def export_questions(data: dict):
         name_el = ET.SubElement(question_el, "name")
         ET.SubElement(name_el, "text").text = q["name"]
 
-        text_el = ET.SubElement(question_el, "questiontext")
-        ET.SubElement(text_el, "text").text = q["text"]
+        text_el = ET.SubElement(question_el, "questiontext", format="html")
+        question_text = ET.SubElement(text_el, "text")
+
+        # PLUGINFILE for moodle
+        image_tags = ""
+        for i in range(len(q.get("images", []))):
+            image_tags += f'<img src="@@PLUGINFILE@@/image{i}.png" /><br/>'
+
+        html_content = image_tags + q["text"]
+
+        question_text.text = f"<![CDATA[{html_content}]]>"
+        question_text.text = html_content
+
+        # file tag for moodle
+        for i, base64_img in enumerate(q.get("images", [])):
+            image_data = base64_img.split(",")[1].strip()
+            file_el = ET.SubElement(text_el, "file", name=f"image{i}.png", encoding="base64", path="/")
+            file_el.text = image_data
 
         # matching type for question
         if q["type"] == "matching":
@@ -150,7 +175,7 @@ async def export_questions(data: dict):
                 sub_ans = ET.SubElement(sub_el, "answer")
                 ET.SubElement(sub_ans, "text").text = subq["answer_text"]
 
-        # normal answers (e.g. multichoice, truefalse)
+        # normal answers (multichoice, etc...)
         for answer in q.get("answers", []):
             answer_el = ET.SubElement(
                 question_el, "answer", fraction="100" if answer["correct"] else "0"
@@ -159,6 +184,7 @@ async def export_questions(data: dict):
 
     xml_data = ET.tostring(root, encoding="utf-8", method="xml")
 
+    # pretty_xml for exported xml formatting
     pretty_xml = minidom.parseString(xml_data).toprettyxml(indent="  ")
     lines = pretty_xml.splitlines()
     filtered_lines = [line for line in lines if not line.strip().startswith("<?xml")]
