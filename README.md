@@ -1,5 +1,20 @@
 # XML Export
 
+
+### Installation
+    - das Skript installRequirements.sh ausführen
+    - das Skript startBackendAndFrontend.sh
+    - Browser-Tab öffnet sich auf localhost
+    - auf den 'Browse'-Button drücken
+    - mehrere Dateien können ausgewählt werden, jedoch gleichzeitig auswählen
+    - anschließend auf den 'Submit'-Button
+    - Fragen auswählen für Detailansicht
+    - Ausgewählte Fragen exportieren mit dem 'Export Selected Questions'-Button
+    - Generierte XML wird heruntergeladen
+
+
+### Zeitplanung
+
 | *Zeitplanung*                                     | Zeit   |
 | ------------------------------------------------- |--------|
 | GitHub-Repo anlegen                               |  0.5h  |
